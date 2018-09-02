@@ -1,0 +1,11 @@
+.DS_Store
+.idea
+.tern-project
+*.ai
+*.log
+*.pdf
+*.psd
+*.sublime*
+css/
+node_modules/
+Thumbs.db

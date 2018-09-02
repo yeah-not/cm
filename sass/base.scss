@@ -1,0 +1,79 @@
+html {
+  box-sizing: border-box;
+  // font-size: 10px;
+}
+
+* {
+  &,
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+body {
+  background-color: #fff;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+svg { max-width: 100%; }
+
+.visually-hidden {
+  position: absolute !important;
+	clip: rect(1px, 1px, 1px, 1px);
+	padding:0 !important;
+	border:0 !important;
+	height: 1px !important;
+	width: 1px !important;
+	overflow: hidden;
+}
+
+.no-focus {
+  a,
+  button,
+  input {
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes shake {
+  from,
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate3d(10px, 0, 0);
+  }
+}
