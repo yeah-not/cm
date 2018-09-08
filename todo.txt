@@ -1,3 +1,5 @@
-TODO:
+TODO: Browser Sync слежение за JS.
+
+TODO: Удалить дефолтные значения!
 
 TODO: Editorconfig
