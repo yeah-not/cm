@@ -21,6 +21,11 @@ img {
 
 svg { max-width: 100%; }
 
+pre  {
+  white-space: pre-wrap;
+  font-size: 1rem;
+}
+
 .visually-hidden {
   position: absolute !important;
 	clip: rect(1px, 1px, 1px, 1px);

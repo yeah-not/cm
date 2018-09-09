@@ -1,14 +1,15 @@
 var form = document.querySelector('.form-atributes');
 var formControls = form.querySelectorAll('[name]');
 var formSubmit = form.querySelector('[type=submit]');
+var clipboardModal = document.querySelector('.clipboard-modal');
+var clipboardModalBody = clipboardModal.querySelector('.modal-body pre');
 
-function RemoveEmptyLines(value) {
-  var regWhite = /[" "]/g; //remove whitespace
-  var regCrLf = /[\n\r\l]{3,}/g; //remove \r\n
-  value = value.replace(regWhite, '').replace(regCrLf, '');
-  return value;
-}
-
+window.addEventListener('keydown', function(e) {
+  if (e.ctrlKey && e.shiftKey && e.keyCode === 67) {
+    e.preventDefault();
+    formSubmit.click();
+  }
+});
 
 form.addEventListener('submit', function(e){
   e.preventDefault();
@@ -89,6 +90,9 @@ form.addEventListener('submit', function(e){
       formatedText += '\n';
     }
   }
-  console.log(formatedText);
+
+  // Вывод форматированного текста в попап и буфер обмена
+  clipboardModalBody.textContent = formatedText;
   navigator.clipboard.writeText(formatedText);
+  $('#clipboardModal').modal('show');
 });
