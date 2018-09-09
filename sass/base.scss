@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-  // font-size: 10px;
+  font-size: 12px;
 }
 
 * {
@@ -46,6 +46,8 @@ pre  {
     }
   }
 }
+
+.container-fluid { max-width: 960px; }
 
 @keyframes pulse {
   from {

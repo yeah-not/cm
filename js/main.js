@@ -1,6 +1,7 @@
 var form = document.querySelector('.form-atributes');
 var formControls = form.querySelectorAll('[name]');
 var formSubmit = form.querySelector('[type=submit]');
+var formClear = form.querySelector('[type=reset]');
 var clipboardModal = document.querySelector('.clipboard-modal');
 var clipboardModalBody = clipboardModal.querySelector('.modal-body pre');
 
@@ -8,6 +9,10 @@ window.addEventListener('keydown', function(e) {
   if (e.ctrlKey && e.shiftKey && e.keyCode === 67) {
     e.preventDefault();
     formSubmit.click();
+  } else if (e.ctrlKey && e.shiftKey && e.keyCode === 88) {
+    e.preventDefault();
+    formSubmit.click();
+    formClear.click();
   }
 });
 
@@ -18,7 +23,7 @@ form.addEventListener('submit', function(e){
   var isList, isFirstCap = false;
 
   for (var i = 0; i < formControls.length; i++) {
-    if (formControls[i].dataset.formated) {
+    if (formControls[i].type == 'textarea') {
       // разбираем строку в массив по переносам
       textArray = formControls[i].value.split('\n');
 

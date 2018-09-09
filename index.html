@@ -9,9 +9,10 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="container">
+  <div class="container-fluid">
+    <h3>Атрибуты</h3>
+    <hr>
     <form class="form-atributes" action="#">
-      <hr>
       <div class="row">
         <div class="col">
           <div class="form-group">
@@ -34,19 +35,19 @@
         <div class="col">
           <div class="form-group">
             <label for="attributes01_width">Ширина, мм</label>
-            <input class="form-control" type="text" name="width" data-prefix="Физические характеристики|Ширина, мм|" value="111" id="attributes01_width" required>
+            <input class="form-control" type="text" name="width" value="100" data-prefix="Физические характеристики|Ширина, мм|" id="attributes01_width" required>
           </div>
         </div>
         <div class="col">
           <div class="form-group">
             <label for="attributes01_depth">Глубина, мм</label>
-            <input class="form-control" type="text" name="depth" data-prefix="Физические характеристики|Глубина, мм|" value="222" id="attributes01_depth" required>
+            <input class="form-control" type="text" name="depth" value="100" data-prefix="Физические характеристики|Глубина, мм|" id="attributes01_depth" required>
           </div>
         </div>
         <div class="col">
           <div class="form-group">
             <label for="attributes01_height">Высота, мм</label>
-            <input class="form-control" type="text" name="height" data-prefix="Физические характеристики|Высота, мм|" value="333" id="attributes01_height" required>
+            <input class="form-control" type="text" name="height" value="100" data-prefix="Физические характеристики|Высота, мм|" id="attributes01_height" required>
           </div>
         </div>
       </div>
@@ -54,31 +55,13 @@
         <div class="col">
           <div class="form-group">
             <label for="attributes01_features">Особенности'</label>
-            <textarea class="form-control" name="features" data-prefix="Дополнительные характеристики|Особенности'|" data-formated="data-formated" id="attributes01_features" rows="10" required>Материал: сталь полированняа нержавеющая AISI304
-Диаметр трубы: Ø38мм, толщина стенки 1,5мм
-
-Крепление:
-- верх – пятак Ø100мм с декоративной крышкой
-- низ – резиновая заглушка-упор
-
-Характеристики ступени:
-- штампованный лист толщиной 1мм из полированной нержавеющей стали
-- длина 500мм/600мм, ширина - 90мм
-- максимальная нагрузка - 150кг
-            </textarea>
+            <textarea class="form-control" name="features" data-prefix="Дополнительные характеристики|Особенности'|" id="attributes01_features" rows="5" required>lorem</textarea>
           </div>
         </div>
         <div class="col">
           <div class="form-group">
             <label for="attributes01_equipment">Комплектация'</label>
-            <textarea class="form-control" name="equipment" data-prefix="Дополнительные характеристики|Комплектация'|" data-formated="data-formated" id="attributes01_equipment" rows="10" required>Комплектация:
-- ступень штампованная из полированной нержавеющей стали - 2шт/3шт/4шт/5 шт
-- декоративная крышка из полированной нержавеющей стали - 2шт
-- резиновая заглушка-упор - 2шт
-- шуруп М6x60 из нержавеющей стали (фиксатор пятак) - 8шт
-- дюбель разжимной Ø10x60 пластиковый - 8шт
-- болт М8x20 из нержавеющей стали (крепление ступени) - 4шт/6шт/8шт/10шт
-            </textarea>
+            <textarea class="form-control" name="equipment" data-prefix="Дополнительные характеристики|Комплектация'|" id="attributes01_equipment" rows="5" required>lorem</textarea>
           </div>
         </div>
       </div>
@@ -107,7 +90,8 @@
       <hr>
       <div class="row">
         <div class="col">
-          <button type="submit" class="form-atributes__submit btn btn-primary btn-lg btn-block">Обработать</button>
+          <button type="submit" class="btn btn-primary btn-lg">Обработка</button>
+          <button type="reset" class="btn btn-secondary btn-lg">Сброс</button>
         </div>
       </div>
     </form>
