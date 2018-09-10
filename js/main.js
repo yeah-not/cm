@@ -1,19 +1,114 @@
-var form = document.querySelector('.form-atributes');
+var form = document.querySelector('.form-attributes');
+var formContainer = document.querySelector('.form-attributes__container');
 var formControls = form.querySelectorAll('[name]');
 var formSubmit = form.querySelector('[type=submit]');
 var formClear = form.querySelector('[type=reset]');
 var clipboardModal = document.querySelector('.clipboard-modal');
 var clipboardModalBody = clipboardModal.querySelector('.modal-body pre');
 
-window.addEventListener('keydown', function(e) {
-  if (e.ctrlKey && e.shiftKey && e.keyCode === 67) {
-    e.preventDefault();
-    formSubmit.click();
-  } else if (e.ctrlKey && e.shiftKey && e.keyCode === 88) {
-    e.preventDefault();
-    formSubmit.click();
-    formClear.click();
+var formLoad = document.querySelector('.form-load');
+var formLoadAttributes = formLoad.querySelector('[name=attributes]');
+var formLoadWrapper = formLoad.querySelector('.form-group');
+
+var makeElement = function (tagName, className, text, attributes) {
+  var element = document.createElement(tagName);
+
+  if (name) {
+    element.name = name;
   }
+
+  if (className) {
+    element.classList.add(className);
+  }
+
+  if (text) {
+    if (tagName === 'input') {
+        element.value = text;
+    } else {
+      element.textContent = text;
+    }
+  }
+  if (attributes) {
+    for (var key in attributes) {
+      element.setAttribute(key, attributes[key]);
+    }
+  }
+
+  // element.dataset.prefix = 'Основные характеристики|Тип|';
+
+  return element;
+};
+
+var createControl = function(controlData, index){
+  var type = '';
+  var typeAbbr = controlData[controlData.length - 1];
+  var params = [];
+  var title = '';
+  var attributes = {};
+  var options = [];
+  var controlFull;
+
+  if (typeAbbr === 'T') {
+    type = 'textarea'
+    controlData = controlData.slice(0,-1);
+  } else if (typeAbbr === '|') {
+    type = 'input'
+  } else {
+    type = 'select';
+  }
+
+  params = controlData.split('|');
+  title = params[1];
+  prefix = params[0] + '|' + params[1] + '|';
+  attributes = {
+    'name': 'attribute_' + index,
+    'id': 'attributes_control_' + index,
+    'data-prefix': prefix,
+    'required': 'required'
+  }
+
+  if (type ==='textarea') {
+    attributes.rows = '5';
+  } else if (type ==='select') {
+    options = params[2].split('; ');
+
+    if (options.length === 1) {
+      attributes.disabled = 'disabled';
+    }
+  }
+
+  var row = makeElement('div', 'row');
+  var col = makeElement('div', 'col');
+  var group = makeElement('div', 'form-group')
+
+  var label = makeElement('label', undefined, title, {'for' : 'attributes_control_' + index});
+  var control = makeElement(type, 'form-control', undefined, attributes);
+
+  if (type ==='select') {
+    for (var i = 0; i < options.length; i++) {
+      var option = makeElement('option', undefined, options[i]);
+      control.appendChild(option);
+    }
+  }
+
+  group.appendChild(label);
+  group.appendChild(control);
+  row.appendChild(col).appendChild(group);
+  controlFull = row;
+
+  return controlFull;
+}
+
+formLoad.addEventListener('submit', function(e){
+  e.preventDefault();
+  var attributes = formLoadAttributes.value.trim().split('\n');
+
+  for (var i = 0; i < attributes.length; i++) {
+    var attribute = attributes[i].trim();
+    var controlItem =  createControl(attribute, i);
+    formContainer.appendChild(controlItem);
+  }
+
 });
 
 form.addEventListener('submit', function(e){
@@ -100,4 +195,15 @@ form.addEventListener('submit', function(e){
   clipboardModalBody.textContent = formatedText;
   navigator.clipboard.writeText(formatedText);
   $('#clipboardModal').modal('show');
+});
+
+window.addEventListener('keydown', function(e) {
+  if (e.ctrlKey && e.shiftKey && e.keyCode === 67) {
+    e.preventDefault();
+    formSubmit.click();
+  } else if (e.ctrlKey && e.shiftKey && e.keyCode === 88) {
+    e.preventDefault();
+    formSubmit.click();
+    formClear.click();
+  }
 });
