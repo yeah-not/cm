@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-  // font-size: 10px;
+  font-size: 12px;
 }
 
 * {
@@ -20,6 +20,11 @@ img {
 }
 
 svg { max-width: 100%; }
+
+pre  {
+  white-space: pre-wrap;
+  font-size: 1rem;
+}
 
 .visually-hidden {
   position: absolute !important;
@@ -41,6 +46,8 @@ svg { max-width: 100%; }
     }
   }
 }
+
+.container-fluid { max-width: 960px; }
 
 @keyframes pulse {
   from {
