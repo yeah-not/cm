@@ -16,18 +16,7 @@
       <div class="col">
         <div class="form-group">
           <label for="">Шаблон</label>
-          <textarea name="attributes" id="" cols="30" rows="10" class="form-control">Основные характеристики|Тип|Водяной; Электрический
-Основные характеристики|Цвет|Хром; Белый
-Основные характеристики|Материал|Нержавейка; Черный металл
-Физические характеристики|Ширина, мм|
-Физические характеристики|Глубина, мм|
-Физические характеристики|Высота, мм|
-Дополнительные характеристики|Особенности'|T
-Дополнительные характеристики|Комплектация'|T
-Дополнительные характеристики|Страна производитель|Украина
-Условия покупки|Наличие|Складская программа
-Условия покупки|Гарантия производителя'|36 месяцев
-</textarea>
+          <textarea name="attributes" id="" cols="30" rows="10" class="form-control"></textarea>
         </div>
         <hr>
         <button type="submit" class="btn btn-primary btn-lg">Загрузить</button>
@@ -36,7 +25,7 @@
   </form>
   <br>
   <br>
-  <form class="form-attributes container-fluid" action="#">
+  <form class="form-attributes-new container-fluid" action="#">
     <h3>Атрибуты</h3>
     <hr>
     <div class="form-attributes__container"></div>
@@ -50,80 +39,105 @@
   </form>
   <br>
   <br>
-  <form class="d-none form-attributes container-fluid" action="#">
+  <form class="form-attributes container-fluid" action="#">
     <h3>Атрибуты</h3>
     <hr>
-    <div class="row">
-      <div class="col">
-        <div class="form-group">
-          <label for="attributes01_type">Тип</label>
-          <select class="form-control" name="type" data-prefix="Основные характеристики|Тип|" id="attributes01_type">
-            <option>Водяной</option>
-            <option>Электрический</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="attributes01_material">Материал</label>
-          <select class="form-control" name="material" data-prefix="Основные характеристики|Материал|" id="attributes01_material">
-            <option>Нержавейка</option>
-            <option>Черный метал</option>
-          </select>
+    <div class="form-attributes__container">
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="attributes_control_0">Тип</label>
+            <select class="form-control" name="attribute_0" id="attributes_control_0" data-prefix="Основные характеристики|Тип|" required="required">
+              <option>Водяной</option>
+              <option>Электрический</option>
+            </select>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="form-group">
-          <label for="attributes01_width">Ширина, мм</label>
-          <input class="form-control" type="text" name="width" value="100" data-prefix="Физические характеристики|Ширина, мм|" id="attributes01_width" required>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="attributes_control_1">Цвет</label>
+            <select class="form-control" name="attribute_1" id="attributes_control_1" data-prefix="Основные характеристики|Цвет|" required="required">
+              <option>Хром</option>
+              <option>Белый</option>
+            </select>
+          </div>
         </div>
       </div>
-      <div class="col">
-        <div class="form-group">
-          <label for="attributes01_depth">Глубина, мм</label>
-          <input class="form-control" type="text" name="depth" value="100" data-prefix="Физические характеристики|Глубина, мм|" id="attributes01_depth" required>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="attributes_control_2">Материал</label>
+            <select class="form-control" name="attribute_2" id="attributes_control_2" data-prefix="Основные характеристики|Материал|" required="required">
+              <option>Нержавейка</option>
+              <option>Черный металл</option>
+            </select>
+          </div>
         </div>
       </div>
-      <div class="col">
-        <div class="form-group">
-          <label for="attributes01_height">Высота, мм</label>
-          <input class="form-control" type="text" name="height" value="100" data-prefix="Физические характеристики|Высота, мм|" id="attributes01_height" required>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="attributes_control_3">Ширина, мм</label>
+            <input class="form-control" name="attribute_3" id="attributes_control_3" data-prefix="Физические характеристики|Ширина, мм|" required="required">
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="attributes_control_4">Глубина, мм</label>
+            <input class="form-control" name="attribute_4" id="attributes_control_4" data-prefix="Физические характеристики|Глубина, мм|" required="required">
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="attributes_control_5">Высота, мм</label>
+            <input class="form-control" name="attribute_5" id="attributes_control_5" data-prefix="Физические характеристики|Высота, мм|" required="required">
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="form-group">
-          <label for="attributes01_features">Особенности'</label>
-          <textarea class="form-control" name="features" data-prefix="Дополнительные характеристики|Особенности'|" id="attributes01_features" rows="5" required>lorem</textarea>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="attributes_control_6">Особенности'</label>
+            <textarea class="form-control" name="attribute_6" id="attributes_control_6" data-prefix="Дополнительные характеристики|Особенности'|" required="required" rows="5"></textarea>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="attributes_control_7">Комплектация'</label>
+            <textarea class="form-control" name="attribute_7" id="attributes_control_7" data-prefix="Дополнительные характеристики|Комплектация'|" required="required" rows="5"></textarea>
+          </div>
         </div>
       </div>
-      <div class="col">
-        <div class="form-group">
-          <label for="attributes01_equipment">Комплектация'</label>
-          <textarea class="form-control" name="equipment" data-prefix="Дополнительные характеристики|Комплектация'|" id="attributes01_equipment" rows="5" required>lorem</textarea>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="attributes_control_8">Страна производитель</label>
+            <select class="form-control" name="attribute_8" id="attributes_control_8" data-prefix="Дополнительные характеристики|Страна производитель|" required="required" disabled="disabled">
+              <option>Украина</option>
+            </select>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="form-group">
-          <label for="attributes01_country">Страна производитель</label>
-          <select class="form-control" name="country" data-prefix="Дополнительные характеристики|Страна производитель|" id="attributes01_country" readonly tabindex=-1>
-            <option>Украина</option>
-          </select>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="attributes_control_9">Наличие</label>
+            <select class="form-control" name="attribute_9" id="attributes_control_9" data-prefix="Условия покупки|Наличие|" required="required" disabled="disabled">
+              <option>Складская программа</option>
+            </select>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="attributes01_availability">Наличие</label>
-          <select class="form-control" name="availability" data-prefix="Условия покупки|Наличие|" id="attributes01_availability" readonly tabindex=-1>
-            <option>Складская программа</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="attributes01_warranty">Гарантия производителя'</label>
-          <select class="form-control" name="warranty" data-prefix="Условия покупки|Гарантия производителя'|" id="attributes01_warranty" readonly tabindex=-1>
-            <option>36 месяцев</option>
-          </select>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="attributes_control_10">Гарантия производителя'</label>
+            <select class="form-control" name="attribute_10" id="attributes_control_10" data-prefix="Условия покупки|Гарантия производителя'|" required="required" disabled="disabled">
+              <option>36 месяцев</option>
+            </select>
+          </div>
         </div>
       </div>
     </div>
